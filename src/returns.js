@@ -11,6 +11,7 @@ function openReturn(order, lines) {
   return {
     orderId: order.id,
     lines,
+    refundReason: '',
     raisedAt: new Date().toISOString(),
     approvedBy: null,
     approvedAt: null,
