@@ -1,6 +1,6 @@
 // Courier handoff. The external courier system is sometimes unreachable.
 
-const RETRY_LIMIT = 3;
+const RETRY_LIMIT = 5;
 
 function handoff(shipment, courierClient) {
   for (let attempt = 1; attempt <= RETRY_LIMIT; attempt += 1) {
