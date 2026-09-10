@@ -8,3 +8,5 @@
 | Dispatch | The moment a shipment leaves the warehouse. |
 | Return request | A customer asking to send goods back. |
 | Refunds clerk | The role allowed to approve a refund. |
+
+- **Timeout**: The duration before a request is considered failed.
