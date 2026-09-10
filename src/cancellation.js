@@ -13,7 +13,7 @@ function canCancel(order) {
   if (!CANCELLABLE_STATUSES.includes(order.status)) {
     return {
       allowed: false,
-      reason: 'This order cannot be cancelled.',
+      reason: 'Shipment already dispatched; order can only be returned.',
     };
   }
 
