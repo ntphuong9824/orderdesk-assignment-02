@@ -8,6 +8,10 @@ function openReturn(order, lines) {
     throw new Error('a return must cover at least one line');
   }
 
+  if (order.status === 'cancelled') {
+    throw new Error('cannot return against a cancelled order');
+  }
+
   return {
     orderId: order.id,
     lines,
