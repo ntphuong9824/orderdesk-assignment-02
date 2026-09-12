@@ -8,15 +8,21 @@ function openReturn(order, lines) {
     throw new Error('a return must cover at least one line');
   }
 
+  const eligibleLines = lines.filter(line => !line.finalClearance);
+  if (eligibleLines.length === 0) {
+    throw new Error('cannot return final-clearance items');
+  }
+
   return {
     orderId: order.id,
-    lines,
+    lines: eligibleLines,
     refundReason: '',
     raisedAt: new Date().toISOString(),
     approvedBy: null,
     approvedAt: null,
   };
 }
+
 
 function approve(returnRequest, clerkId) {
   return {
